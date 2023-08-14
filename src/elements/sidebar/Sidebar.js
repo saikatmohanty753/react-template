@@ -11,8 +11,8 @@ const Sidebar = () => {
             </a>
         </div>
         <nav id="js-primary-nav" className="primary-nav" role="navigation">
-            <div class="info-card">
-                <img src="../../assets/img/pro.png" class="profile-image rounded-circle" alt="Hello world" />
+            <div className="info-card">
+                <img src="../../assets/img/pro.png" className="profile-image rounded-circle" alt="Hello world" />
                 <div className="info-card-text">
                     <a href="#" className="d-flex align-items-center text-white">
                         <span className="text-truncate text-truncate-sm d-inline-block">
@@ -28,6 +28,10 @@ const Sidebar = () => {
                     <a href="/dashboard" title="Dashboard" data-filter-tags="Dashboard">
                         <i className="fa fa-info-circle"></i>
                         <span className="nav-link-text" data-i18n="nav.application_intel">Dashboard</span>
+                    </a>
+                    <a href="/user-master" title="Dashboard" data-filter-tags="Dashboard">
+                        <i className="fa fa-user"></i>
+                        <span className="nav-link-text" data-i18n="nav.application_intel">Users</span>
                     </a>
                 </li>
             </ul>

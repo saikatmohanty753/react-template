@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+import AccountCard from './AccountCard';
 
 const Header = () => {
+    const [isOpen, isClose] = useState(false);
+    const dialog = () => {
+        isClose(!isOpen);
+        return isOpen;
+    }
   return (
     <header className='page-header' role="banner">
         <div className="page-logo">
@@ -34,37 +40,15 @@ const Header = () => {
             </a>
         </div>
         <div className="search">
-            <form className="app-forms hidden-xs-down" role="search" action="page_search.html" autocomplete="off">
-                <input type="text" id="search-field" placeholder="Search for anything" className="form-control" tabindex="1" />
-                <a href="#" onclick="return false;" className="btn-danger btn-search-close js-waves-off d-none" data-action="toggle" data-class="mobile-search-on">
+            <form className="app-forms hidden-xs-down" role="search" action="page_search.html" autoComplete="off">
+                <input type="text" id="search-field" placeholder="Search for anything" className="form-control" tabIndex="1" />
+                <a href="#" onClick={dialog} className="btn-danger btn-search-close js-waves-off d-none" data-action="toggle" data-class="mobile-search-on">
                     <i className="fal fa-times"></i>
                 </a>
             </form>
         </div>
         <div className="ml-auto d-flex">
-            <div className="d-flex">
-                <h5 style={{marginTop:'20px'}}>Saikat Mohanty</h5>
-                <a href="#" data-toggle="dropdown" title="drlantern@gotbootstrap.com" className="header-icon d-flex align-items-center justify-content-center ml-2">
-                    <img src="../../assets/img/pro.png" className="profile-image rounded-circle" alt="Hello World" />
-                </a>
-                <div className="dropdown-menu dropdown-menu-animated dropdown-lg">
-                    <div className="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
-                        <div className="d-flex flex-row align-items-center mt-1 mb-1 color-white">
-                            <span className="mr-2">
-                                <img src="../../assets/img/pro.png" className="rounded-circle profile-image" alt="Hello World" />
-                            </span>
-                            <div className="info-card-text">
-                                <div className="fs-lg text-truncate text-truncate-lg">Hello World</div>
-                                <span className="text-truncate text-truncate-md opacity-80">saikatmohanty@lipl.in</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dropdown-divider m-0"></div>
-                    <a class="dropdown-item fw-500 pt-3 pb-3" href="#">
-                        <span data-i18n="drpdwn.page-logout">Logout</span>
-                    </a>
-                </div>
-            </div>
+            <AccountCard/>
         </div>
     </header>
   )
