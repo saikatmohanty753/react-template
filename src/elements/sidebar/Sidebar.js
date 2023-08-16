@@ -1,6 +1,10 @@
-import React from 'react'
-
+import React from 'react';
+import SidebarItem from './SidebarItem'
+import items from './item';
 const Sidebar = () => {
+    const handleMenu = (event) => {
+        /* console.log(document.querySelector(event.target).nextSibling,'ok') */
+    }
   return (
     <aside className='page-sidebar'>
         <div className='page-logo'>
@@ -23,17 +27,8 @@ const Sidebar = () => {
                 </div>
                 <img src="../../assets/img/card-backgrounds/cover-2-lg.png" className="cover" alt="cover"></img>
             </div>
-            <ul id="js-nav-menu" className="nav-menu">
-                <li>
-                    <a href="/dashboard" title="Dashboard" data-filter-tags="Dashboard">
-                        <i className="fa fa-info-circle"></i>
-                        <span className="nav-link-text" data-i18n="nav.application_intel">Dashboard</span>
-                    </a>
-                    <a href="/user-master" title="Dashboard" data-filter-tags="Dashboard">
-                        <i className="fa fa-user"></i>
-                        <span className="nav-link-text" data-i18n="nav.application_intel">Users</span>
-                    </a>
-                </li>
+            <ul className="nav-menu">
+                { items?.map((item,index)=><SidebarItem key={index} itemkey={index} item={item} />)}
             </ul>
         </nav>
         <div className="filter-message js-filter-message bg-success-600"></div>
