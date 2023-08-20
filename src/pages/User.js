@@ -1,6 +1,7 @@
 import { useFormik } from 'formik'
 import React from 'react'
 import { loginSchema } from '../schema';
+import Table from '../elements/component/Table';
 
 const initialValues = {
     name: '',
@@ -74,6 +75,9 @@ const User = () => {
                         <button className="btn btn-primary btn-sm" type='submit'>Create</button>
                     </div>
                 </form>
+                <div className='mt-4'>
+                    <Table/>
+                </div>
             </div>
         </div>
     </div>

@@ -23,25 +23,6 @@ const items = [
                 children:[]
             }
         ]
-    },
-    {
-        item:"Demo",
-        path:"#",
-        icon:"fa fa-tag",
-        children:[
-            {
-                item:"Users",
-                path:"/user-master",
-                icon:"",
-                children:[]
-            },
-            {
-                item:"Roles",
-                path:"/user-master",
-                icon:"",
-                children:[]
-            }
-        ]
     }
 ]
 
